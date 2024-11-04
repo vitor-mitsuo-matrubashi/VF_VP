@@ -26,8 +26,3 @@ def dias_corridos(data_inicial: str, data_final: str) -> int:
     data_inicial = datetime.strptime(data_inicial, '%Y-%m-%d')
     data_final = datetime.strptime(data_final, '%Y-%m-%d')
     return (data_final - data_inicial).days
-
-
-dias = dias_corridos('2024-09-16','2024-11-04')
-
-print(f"A quantidade de dias corridos desde o dia do acidente foi {dias} dias")
