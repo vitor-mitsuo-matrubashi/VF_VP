@@ -1,8 +1,7 @@
 import pandas as pd
 from datetime import datetime, timedelta
 
-# Define o caminho para o arquivo CSV
-caminho_feriados = '../data/workdays.csv'
+
 
 
 def ler_feriados(caminho_feriados: str) -> list:
@@ -38,7 +37,7 @@ def ler_feriados(caminho_feriados: str) -> list:
 
     return feriados
 
-def dias_uteis(data_inicial: str, data_final: str, feriados: list) -> int:
+def calcular_dias_uteis(data_inicial: str, data_final: str, feriados: str) -> int:
     """
     Calcula a quantidade de dias uteis entre duas datas.
 
@@ -58,7 +57,7 @@ def dias_uteis(data_inicial: str, data_final: str, feriados: list) -> int:
 
     """
 
-
+    # feriados = ler_feriados(caminho_feriados)
     data_inicial = datetime.strptime(data_inicial, '%Y-%m-%d')
     data_final = datetime.strptime(data_final, '%Y-%m-%d')
 

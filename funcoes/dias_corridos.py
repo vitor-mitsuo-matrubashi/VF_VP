@@ -1,6 +1,6 @@
 from datetime import datetime
 
-def dias_corridos(data_inicial: str, data_final: str) -> int:
+def calcular_dias_corridos(data_inicial: str, data_final: str) -> int:
     """
     Calcula a quantidade de dias corridos entre duas datas.
 
@@ -18,11 +18,20 @@ def dias_corridos(data_inicial: str, data_final: str) -> int:
         ValueError: Se as datas estiverem em um formato inválido.
 
     Example:
-        >>> dias_corridos('2024-01-01', '2024-01-10')
+        # >>> dias_corridos('2024-01-01', '2024-01-10')
         9
     """
 
 
+    # Remove qualquer hora da string de data
+    data_inicial = data_inicial.split(' ')[0]
+    data_final = data_final.split(' ')[0]
+
+    # Converte as strings de data para objetos datetime
     data_inicial = datetime.strptime(data_inicial, '%Y-%m-%d')
     data_final = datetime.strptime(data_final, '%Y-%m-%d')
+
     return (data_final - data_inicial).days
+
+
+# print(calcular_dias_corridos('2024-10-10', '2024-12-30'))
