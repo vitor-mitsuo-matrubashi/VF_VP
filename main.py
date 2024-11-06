@@ -2,11 +2,6 @@ from datetime import datetime
 from funcoes.dias_corridos import calcular_dias_corridos
 from funcoes.conversor_taxa import converter_taxa_ano_para_dia, converter_taxa_mes_para_dia
 
-# Supondo que essas funções já existam:
-# def calcular_dias_corridos(data_inicial: str, data_final: str) -> int:
-# def converter_taxa_ano_para_dia(taxa_ano: float, tipo_calculo: str, dias_no_ano: int = 365) -> float:
-# def converter_taxa_mes_para_dia(taxa_mes: float, tipo_calculo: str, dias_no_mes: int = 30) -> float:
-
 def calcular_vf(notional: float, tipo_calculo: str, taxa: float, data_inicial: str, data_final: str, tipo_taxa: str) -> float:
     """
     Calcula o Valor Futuro (VF) com base nos dados fornecidos.
